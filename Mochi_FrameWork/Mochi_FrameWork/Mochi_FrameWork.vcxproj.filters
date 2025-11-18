@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\Component">
+      <UniqueIdentifier>{72d5231f-4baf-4b27-96d7-0348672cedce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Component\Base">
+      <UniqueIdentifier>{d0d6ed1e-8e72-4669-94fe-9ac676897a25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameManager">
+      <UniqueIdentifier>{6406fde1-5898-48a3-875c-5a124bee7e6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject">
+      <UniqueIdentifier>{9f6c06ae-2f96-4d08-af95-67830d9d1532}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObject\Base">
+      <UniqueIdentifier>{28caba61-a34b-4d83-9f5d-aef35f984e06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{d94c2ea9-84c2-450a-8757-6753c694abca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Base">
+      <UniqueIdentifier>{f6f97d24-d653-43eb-b278-9ec4fcd84f31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Manager">
+      <UniqueIdentifier>{40f5d50d-1130-4727-9b18-803a00e97752}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Math">
+      <UniqueIdentifier>{25d0e85e-b4e9-4957-bf8c-2f7754a808e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Input">
+      <UniqueIdentifier>{3e64bea9-8403-4ffd-a3d9-eaa918252470}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Input\Profile">
+      <UniqueIdentifier>{d8dd6f75-b25c-4aa6-a7bd-da40071e70c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Input\Profile\Base">
+      <UniqueIdentifier>{3dbd72dc-ac60-4c5b-bc68-139c828760f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Input\Component">
+      <UniqueIdentifier>{2dca0546-c622-488a-88a0-687f74813f6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Test">
+      <UniqueIdentifier>{3bcc62ce-7841-4fa1-a4ce-77cf36984201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ResourceManager">
+      <UniqueIdentifier>{0ff22268-3317-40a6-b0da-eb986ad1f814}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Component.cpp">
+      <Filter>ソース ファイル\Component\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>ソース ファイル\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>ソース ファイル\Scene\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneEventProcessor.cpp">
+      <Filter>ソース ファイル\Scene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="EventQueue.cpp">
+      <Filter>ソース ファイル\Scene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneEvent.cpp">
+      <Filter>ソース ファイル\Scene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>ソース ファイル\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix4.cpp">
+      <Filter>ソース ファイル\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>ソース ファイル\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>ソース ファイル\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="InputMap.cpp">
+      <Filter>ソース ファイル\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>ソース ファイル\GameObject\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStack.cpp">
+      <Filter>ソース ファイル\Scene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultPlayerProfile.cpp">
+      <Filter>ソース ファイル\Input\Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="InputComponent.cpp">
+      <Filter>ソース ファイル\Input\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="KadaiComponent.cpp">
+      <Filter>ヘッダー ファイル\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="KadaiGameObject.cpp">
+      <Filter>ヘッダー ファイル\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="KadaiGameObject2.cpp">
+      <Filter>ヘッダー ファイル\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="KadaiScene.cpp">
+      <Filter>ヘッダー ファイル\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>ソース ファイル\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourcePtr.inl">
+      <Filter>ソース ファイル\ResourceManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Component.h">
+      <Filter>ソース ファイル\Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>ソース ファイル\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>ソース ファイル\GameObject\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>ソース ファイル\Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="EventQueue.h">
+      <Filter>ソース ファイル\Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneEvent.h">
+      <Filter>ソース ファイル\Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneEventProcessor.h">
+      <Filter>ソース ファイル\Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStack.h">
+      <Filter>ソース ファイル\Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectBase.h">
+      <Filter>ソース ファイル\GameObject\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentBase.h">
+      <Filter>ソース ファイル\Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>ソース ファイル\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix4.h">
+      <Filter>ソース ファイル\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>ソース ファイル\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>ソース ファイル\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="InputMap.h">
+      <Filter>ソース ファイル\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultPlayerProfile.h">
+      <Filter>ソース ファイル\Input\Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="IInputProfile.h">
+      <Filter>ソース ファイル\Input\Profile\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="InputComponent.h">
+      <Filter>ソース ファイル\Input\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="KadaiComponent.h">
+      <Filter>ヘッダー ファイル\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="KadaiGameObject.h">
+      <Filter>ヘッダー ファイル\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="KadaiGameObject2.h">
+      <Filter>ヘッダー ファイル\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="KadaiScene.h">
+      <Filter>ヘッダー ファイル\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceHandle.h">
+      <Filter>ソース ファイル\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>ソース ファイル\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcePtr.h">
+      <Filter>ソース ファイル\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameworkContext.h">
+      <Filter>ソース ファイル\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameworkFacade.h">
+      <Filter>ソース ファイル\GameManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResourceManager.inl">
+      <Filter>ソース ファイル\ResourceManager</Filter>
+    </None>
+  </ItemGroup>
+</Project>
