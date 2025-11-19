@@ -38,12 +38,12 @@ namespace MochiFramework::SceneSystem
     void SceneEventProcessor::RegisterHandlers() {
         mHandlers[SceneEvent::Type::ChangeScene] = [this](const SceneEvent& e) {
             if (auto* p = std::get_if<ChangeScenePayload>(&e.GetSceneEventData()))
-                mSceneStack.ChangeMainScene(p->sceneName, &mEventQueue);
+                mSceneStack.ChangeMainScene(p->sceneName);
             };
 
         mHandlers[SceneEvent::Type::PushOverlay] = [this](const SceneEvent& e) {
             if (auto* p = std::get_if<PushOverlayPayload>(&e.GetSceneEventData()))
-                mSceneStack.PushOverlayScene(p->overlayName, &mEventQueue);
+                mSceneStack.PushOverlayScene(p->overlayName);
             };
 
         mHandlers[SceneEvent::Type::PopOverlay] = [this](const SceneEvent&) {
@@ -51,7 +51,7 @@ namespace MochiFramework::SceneSystem
             };
 
         mHandlers[SceneEvent::Type::ReloadScene] = [this](const SceneEvent&) {
-            mSceneStack.ReloadMainScene(&mEventQueue);
+            mSceneStack.ReloadMainScene();
             };
 
         mHandlers[SceneEvent::Type::QuitGame] = [this](const SceneEvent&) {

@@ -5,6 +5,8 @@
 #include "EventQueue.h"
 #include "SceneEventProcessor.h"
 #include "InputManager.h"
+#include "FrameworkContext.h"
+#include "FrameworkFacade.h"
 
 
 // === 名前空間 === //
@@ -37,10 +39,17 @@ namespace MochiFramework::Core
 
 		// ===  メンバ変数（内部変数）  === //
 
-		MochiFramework::SceneSystem::SceneStack				mSceneStack;		// シーン管理
-		MochiFramework::SceneSystem::EventQueue				mEventQueue;		// イベントキュー
-		MochiFramework::SceneSystem::SceneEventProcessor	mEventProcessor;	// イベント処理機
-		std::unique_ptr<MochiFramework::InputSystem::InputManager> mInput;				// 共有入力デバイス
+		 // 所有しているシステム
+		MochiFramework::SceneSystem::EventQueue              mEventQueue;      // イベントキュー
+		std::unique_ptr<MochiFramework::InputSystem::InputManager> mInput;     // 共有入力デバイス
+
+		// それらへの参照を束ねたコンテキスト & Facade
+		MochiFramework::Core::FrameworkContext mContext;
+		MochiFramework::Core::FrameworkFacade  mFramework;
+
+		// Facade ベースのシーン管理 & イベント処理機
+		MochiFramework::SceneSystem::SceneStack             mSceneStack;       // シーン管理
+		MochiFramework::SceneSystem::SceneEventProcessor    mEventProcessor;   // イベント処理機
 	};
 
 } // namespace MochiFramework::Core

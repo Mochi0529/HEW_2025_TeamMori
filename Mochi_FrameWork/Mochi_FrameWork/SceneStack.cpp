@@ -8,6 +8,10 @@ using namespace MochiFramework::InputSystem;
 
 namespace MochiFramework::SceneSystem
 {
+    SceneStack::SceneStack(MochiFramework::Core::FrameworkFacade& facade)
+		: mFramework(facade)
+    {
+    }
     SceneStack::~SceneStack() {
         Shutdown();
     }
@@ -16,7 +20,7 @@ namespace MochiFramework::SceneSystem
         factories[name] = std::move(factory);
     }
 
-    void SceneStack::ChangeMainScene(const std::string& name, EventQueue* queue) {
+    void SceneStack::ChangeMainScene(const std::string& name) {
         auto it = factories.find(name);
         if (it == factories.end()) return;
 
@@ -24,20 +28,20 @@ namespace MochiFramework::SceneSystem
             mainScene->UnInit();
         }
 
-        mainScene = it->second(queue);
+        mainScene = it->second(mFramework);
         mainScene->Init();
     }
 
-    void SceneStack::ReloadMainScene(EventQueue* queue) {
+    void SceneStack::ReloadMainScene() {
         if (mainScene) {
             mainScene->UnInit(); // GameObjectなどを一度破棄
             mainScene->Init();   // 必要なものを再構築（CreateGameObjectなど）
         }
     }
 
-    void SceneStack::PushOverlayScene(const std::string& name, EventQueue* queue) {
+    void SceneStack::PushOverlayScene(const std::string& name) {
         auto it = factories.find(name);
-        auto scene = it->second(queue);
+        auto scene = it->second(mFramework);
         if (scene) {
             scene->Init();
             overlays.push_back(std::move(scene));
@@ -51,7 +55,7 @@ namespace MochiFramework::SceneSystem
         }
     }
 
-    void SceneStack::Input(InputManager* device) {
+    void SceneStack::Input() {
         if (!overlays.empty()) {
             overlays.back()->Input(); // 最前面のオーバーレイシーンにのみ入力を渡す
         }

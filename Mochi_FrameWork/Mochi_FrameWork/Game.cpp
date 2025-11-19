@@ -17,22 +17,25 @@ using namespace MochiFramework::InputSystem;
 namespace MochiFramework::Core
 {
 	Game::Game()
-		: mSceneStack()
-		, mEventQueue()
-		, mEventProcessor(mSceneStack, mEventQueue) // イベント処理クラスにシーン管理クラスとイベント管理クラスを渡す
+		: mEventQueue()
+		, mInput(std::make_unique<InputManager>(0))
+		, mContext()
+		, mFramework(mContext)
+		, mSceneStack(mFramework)
+		, mEventProcessor(mSceneStack, mEventQueue)
 	{
+		mContext.eventQueue = &mEventQueue;
+		mContext.input = mInput.get();
 	}
 	bool Game::Initialize()
 	{
 		//-- ゲームの初期化処理 --//	
 
-		 // 入力デバイス作成（XInput 0番）
-		mInput = std::make_unique<InputManager>(0);
 
 		//-- シーン登録 --//
-		mSceneStack.RegisterScene("KadaiScene", [](EventQueue* q) { return std::make_unique<KadaiScene>(q); });
+		mSceneStack.RegisterScene("KadaiScene", [](FrameworkFacade& f) { return std::make_unique<KadaiScene>(f); });
 
-		mSceneStack.ChangeMainScene("KadaiScene", &mEventQueue);
+		mSceneStack.ChangeMainScene("KadaiScene");
 
 		return true; // 初期化に成功すればtrueを返す
 	}
@@ -58,13 +61,13 @@ namespace MochiFramework::Core
 	void Game::ProcessInput()
 	{
 		mInput->Update(); // デバイス状態を1フレーム分更新
-		mSceneStack.Input(mInput.get()); // SceneStackにデバイスを渡して InputComponent を更新させる
+		mSceneStack.Input(); // SceneStackにデバイスを渡して InputComponent を更新させる
 	}
 
 	void Game::UpdateGame(const float deltaTime)
 	{
-		mEventProcessor.Process();     // イベント処理（遷移など）
-		mSceneStack.Update(deltaTime);			// 現在のシーンの更新
+		mEventProcessor.Process();		// イベント処理（遷移など）
+		mSceneStack.Update(deltaTime);	// 現在のシーンの更新
 	}
 
 	void Game::GenerateOutput()
