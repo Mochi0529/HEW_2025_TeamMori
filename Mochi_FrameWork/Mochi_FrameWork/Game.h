@@ -20,6 +20,11 @@ namespace MochiFramework::Core
 		Game();
 		~Game() = default;
 
+		Game(const Game&) = delete;
+		Game& operator=(const Game&) = delete;
+		Game(Game&&) = delete;
+		Game& operator=(Game&&) = delete;
+
 		// ===  公開関数（外部インターフェース）  === //
 
 		bool Initialize();	// 初期化
